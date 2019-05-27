@@ -1,0 +1,6 @@
+module keyboard(
+	input logic CLK_14,
+	output logic [7:0] keyboard_data
+);
+
+endmodule

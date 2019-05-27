@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock_generator:c_g0|q3'
+Slack : -11.687
+TNS   : -1170.403
+
+Type  : Slow 1200mV 85C Model Setup 'Clock_14Mhz'
+Slack : -5.582
+TNS   : -1131.095
+
+Type  : Slow 1200mV 85C Model Setup 'clock_generator:c_g0|rasn_q0'
+Slack : -0.448
+TNS   : -0.448
+
+Type  : Slow 1200mV 85C Model Hold 'Clock_14Mhz'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_generator:c_g0|q3'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_generator:c_g0|rasn_q0'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_14Mhz'
+Slack : -3.000
+TNS   : -666.067
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_generator:c_g0|q3'
+Slack : -1.285
+TNS   : -206.885
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_generator:c_g0|rasn_q0'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Slow 1200mV 0C Model Setup 'clock_generator:c_g0|q3'
+Slack : -10.601
+TNS   : -1062.088
+
+Type  : Slow 1200mV 0C Model Setup 'Clock_14Mhz'
+Slack : -5.042
+TNS   : -1010.715
+
+Type  : Slow 1200mV 0C Model Setup 'clock_generator:c_g0|rasn_q0'
+Slack : -0.353
+TNS   : -0.353
+
+Type  : Slow 1200mV 0C Model Hold 'Clock_14Mhz'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_generator:c_g0|q3'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_generator:c_g0|rasn_q0'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_14Mhz'
+Slack : -3.000
+TNS   : -656.871
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_generator:c_g0|q3'
+Slack : -1.285
+TNS   : -206.885
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_generator:c_g0|rasn_q0'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Fast 1200mV 0C Model Setup 'clock_generator:c_g0|q3'
+Slack : -5.254
+TNS   : -511.963
+
+Type  : Fast 1200mV 0C Model Setup 'Clock_14Mhz'
+Slack : -2.477
+TNS   : -424.389
+
+Type  : Fast 1200mV 0C Model Setup 'clock_generator:c_g0|rasn_q0'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Clock_14Mhz'
+Slack : 0.085
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_generator:c_g0|q3'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_generator:c_g0|rasn_q0'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_14Mhz'
+Slack : -3.000
+TNS   : -321.159
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_generator:c_g0|q3'
+Slack : -1.000
+TNS   : -161.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_generator:c_g0|rasn_q0'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

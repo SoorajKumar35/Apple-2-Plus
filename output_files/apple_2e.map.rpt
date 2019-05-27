@@ -1,0 +1,1269 @@
+Analysis & Synthesis report for apple_2e
+Fri May 03 23:19:21 2019
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |apple_2e|cpu65xx:cpu|theCpuCycle
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for apple2_rom:main_rom|altsyncram:rom_rtl_0|altsyncram_hg71:auto_generated
+ 16. Source assignments for single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated
+ 17. Source assignments for video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0|altsyncram_0k71:auto_generated
+ 18. Parameter Settings for User Entity Instance: video_generator:vid_gen|character_rom:char_rom0
+ 19. Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b5
+ 20. Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b8_1
+ 21. Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b8_2
+ 22. Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:a10
+ 23. Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:b4
+ 24. Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:b9
+ 25. Parameter Settings for User Entity Instance: cpu65xx:cpu
+ 26. Parameter Settings for User Entity Instance: single_port_ram:ram
+ 27. Parameter Settings for User Entity Instance: apple2_rom:main_rom
+ 28. Parameter Settings for Inferred Entity Instance: apple2_rom:main_rom|altsyncram:rom_rtl_0
+ 29. Parameter Settings for Inferred Entity Instance: single_port_ram:ram|altsyncram:ram_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "cpu65xx:cpu"
+ 33. Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:b9"
+ 34. Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:b4"
+ 35. Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:a10"
+ 36. Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b8_2"
+ 37. Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b8_1"
+ 38. Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b5"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 03 23:19:21 2019       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; apple_2e                                    ;
+; Top-level Entity Name              ; apple_2e                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 962                                         ;
+;     Total combinational functions  ; 944                                         ;
+;     Dedicated logic registers      ; 242                                         ;
+; Total registers                    ; 242                                         ;
+; Total pins                         ; 92                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 657,920                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; apple_2e           ; apple_2e           ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                          ; Library ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; pls/synthesis/submodules/pls_jtag_uart_0.v      ; yes             ; User Verilog HDL File                                 ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v      ; pls     ;
+; shift_reg_ls194.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv                              ;         ;
+; flip_flop.sv                                    ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv                                    ;         ;
+; apple2_rom.sv                                   ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv                                   ;         ;
+; clock_generator.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv                              ;         ;
+; apple_2e.sv                                     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv                                     ;         ;
+; cpu65xx.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd                                     ;         ;
+; video_generator.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv                              ;         ;
+; single_port_ram.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv                              ;         ;
+; character_rom.sv                                ; yes             ; User SystemVerilog HDL File                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv                                ;         ;
+; character_rom.txt                               ; yes             ; Auto-Found File                                       ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.txt                               ;         ;
+; apple2_rom.txt                                  ; yes             ; Auto-Found File                                       ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.txt                                  ;         ;
+; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf                                                 ;         ;
+; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                          ;         ;
+; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc                                                    ;         ;
+; lpm_decode.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc                                                 ;         ;
+; aglobal180.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc                                                 ;         ;
+; a_rdenreg.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                  ;         ;
+; altrom.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc                                                     ;         ;
+; altram.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc                                                     ;         ;
+; altdpram.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc                                                   ;         ;
+; db/altsyncram_hg71.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_hg71.tdf                          ;         ;
+; db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif    ;         ;
+; db/decode_c8a.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_c8a.tdf                               ;         ;
+; db/mux_3nb.tdf                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/mux_3nb.tdf                                  ;         ;
+; db/altsyncram_qi41.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_qi41.tdf                          ;         ;
+; db/decode_rsa.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_rsa.tdf                               ;         ;
+; db/decode_k8a.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_k8a.tdf                               ;         ;
+; db/mux_bnb.tdf                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/mux_bnb.tdf                                  ;         ;
+; db/altsyncram_0k71.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_0k71.tdf                          ;         ;
+; db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif ;         ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 962                     ;
+;                                             ;                         ;
+; Total combinational functions               ; 944                     ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 555                     ;
+;     -- 3 input functions                    ; 236                     ;
+;     -- <=2 input functions                  ; 153                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 835                     ;
+;     -- arithmetic mode                      ; 109                     ;
+;                                             ;                         ;
+; Total registers                             ; 242                     ;
+;     -- Dedicated logic registers            ; 242                     ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 92                      ;
+; Total memory bits                           ; 657920                  ;
+;                                             ;                         ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; clock_generator:c_g0|q3 ;
+; Maximum fan-out                             ; 167                     ;
+; Total fan-out                               ; 5475                    ;
+; Average fan-out                             ; 3.76                    ;
++---------------------------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |apple_2e                                    ; 944 (100)           ; 242 (35)                  ; 657920      ; 0            ; 0       ; 0         ; 92   ; 0            ; |apple_2e                                                                                                     ; apple_2e        ; work         ;
+;    |apple2_rom:main_rom|                     ; 8 (0)               ; 1 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|apple2_rom:main_rom                                                                                 ; apple2_rom      ; work         ;
+;       |altsyncram:rom_rtl_0|                 ; 8 (0)               ; 1 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|apple2_rom:main_rom|altsyncram:rom_rtl_0                                                            ; altsyncram      ; work         ;
+;          |altsyncram_hg71:auto_generated|    ; 8 (0)               ; 1 (1)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|apple2_rom:main_rom|altsyncram:rom_rtl_0|altsyncram_hg71:auto_generated                             ; altsyncram_hg71 ; work         ;
+;             |mux_3nb:mux2|                   ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|apple2_rom:main_rom|altsyncram:rom_rtl_0|altsyncram_hg71:auto_generated|mux_3nb:mux2                ; mux_3nb         ; work         ;
+;    |clock_generator:c_g0|                    ; 59 (59)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|clock_generator:c_g0                                                                                ; clock_generator ; work         ;
+;    |cpu65xx:cpu|                             ; 678 (678)           ; 157 (157)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|cpu65xx:cpu                                                                                         ; cpu65xx         ; work         ;
+;    |single_port_ram:ram|                     ; 66 (0)              ; 3 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram                                                                                 ; single_port_ram ; work         ;
+;       |altsyncram:ram_rtl_0|                 ; 66 (0)              ; 3 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram|altsyncram:ram_rtl_0                                                            ; altsyncram      ; work         ;
+;          |altsyncram_qi41:auto_generated|    ; 66 (0)              ; 3 (3)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated                             ; altsyncram_qi41 ; work         ;
+;             |decode_k8a:rden_decode|         ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated|decode_k8a:rden_decode      ; decode_k8a      ; work         ;
+;             |decode_rsa:decode3|             ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated|decode_rsa:decode3          ; decode_rsa      ; work         ;
+;             |mux_bnb:mux2|                   ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated|mux_bnb:mux2                ; mux_bnb         ; work         ;
+;    |video_generator:vid_gen|                 ; 33 (20)             ; 23 (8)                    ; 2560        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen                                                                             ; video_generator ; work         ;
+;       |character_rom:char_rom0|              ; 0 (0)               ; 0 (0)                     ; 2560        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|character_rom:char_rom0                                                     ; character_rom   ; work         ;
+;          |altsyncram:rom_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 2560        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_0k71:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2560        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0|altsyncram_0k71:auto_generated ; altsyncram_0k71 ; work         ;
+;       |flip_flop:b5|                         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|flip_flop:b5                                                                ; flip_flop       ; work         ;
+;       |flip_flop:b8_1|                       ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|flip_flop:b8_1                                                              ; flip_flop       ; work         ;
+;       |flip_flop:b8_2|                       ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|flip_flop:b8_2                                                              ; flip_flop       ; work         ;
+;       |shift_reg_ls194:a10|                  ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|shift_reg_ls194:a10                                                         ; shift_reg_ls194 ; work         ;
+;       |shift_reg_ls194:b4|                   ; 6 (6)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|shift_reg_ls194:b4                                                          ; shift_reg_ls194 ; work         ;
+;       |shift_reg_ls194:b9|                   ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apple_2e|video_generator:vid_gen|shift_reg_ls194:b9                                                          ; shift_reg_ls194 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
+; Name                                                                                                           ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                             ;
++----------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
+; apple2_rom:main_rom|altsyncram:rom_rtl_0|altsyncram_hg71:auto_generated|ALTSYNCRAM                             ; AUTO ; ROM         ; 16384        ; 8            ; --           ; --           ; 131072 ; db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif    ;
+; single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated|ALTSYNCRAM                             ; AUTO ; Single Port ; 65536        ; 8            ; --           ; --           ; 524288 ; None                                            ;
+; video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0|altsyncram_0k71:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 512          ; 5            ; --           ; --           ; 2560   ; db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif ;
++----------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |apple_2e|cpu65xx:cpu|theCpuCycle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++------------------------------+----------------------+-----------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+--------------------------+-----------------------------+------------------------------+---------------------------+------------------------------+--------------------+-------------------------+--------------------+
+; Name                         ; theCpuCycle.cycleEnd ; theCpuCycle.cycleJump ; theCpuCycle.cycleStack4 ; theCpuCycle.cycleStack3 ; theCpuCycle.cycleStack2 ; theCpuCycle.cycleStack1 ; theCpuCycle.cycleWrite ; theCpuCycle.cyclePreWrite ; theCpuCycle.cycleRmw ; theCpuCycle.cycleRead2 ; theCpuCycle.cycleRead ; theCpuCycle.cyclePreRead ; theCpuCycle.cycleBranchPage ; theCpuCycle.cycleBranchTaken ; theCpuCycle.cycleIndirect ; theCpuCycle.cyclePreIndirect ; theCpuCycle.cycle3 ; theCpuCycle.opcodeFetch ; theCpuCycle.cycle2 ;
++------------------------------+----------------------+-----------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+--------------------------+-----------------------------+------------------------------+---------------------------+------------------------------+--------------------+-------------------------+--------------------+
+; theCpuCycle.cycle2           ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 0                  ;
+; theCpuCycle.opcodeFetch      ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 1                       ; 1                  ;
+; theCpuCycle.cycle3           ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 1                  ; 0                       ; 1                  ;
+; theCpuCycle.cyclePreIndirect ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 1                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleIndirect    ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 1                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleBranchTaken ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 1                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleBranchPage  ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 1                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cyclePreRead     ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 1                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleRead        ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 1                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleRead2       ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 1                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleRmw         ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 1                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cyclePreWrite    ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 1                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleWrite       ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 1                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleStack1      ; 0                    ; 0                     ; 0                       ; 0                       ; 0                       ; 1                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleStack2      ; 0                    ; 0                     ; 0                       ; 0                       ; 1                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleStack3      ; 0                    ; 0                     ; 0                       ; 1                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleStack4      ; 0                    ; 0                     ; 1                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleJump        ; 0                    ; 1                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
+; theCpuCycle.cycleEnd         ; 1                    ; 0                     ; 0                       ; 0                       ; 0                       ; 0                       ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                        ; 0                           ; 0                            ; 0                         ; 0                            ; 0                  ; 0                       ; 1                  ;
++------------------------------+----------------------+-----------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+--------------------------+-----------------------------+------------------------------+---------------------------+------------------------------+--------------------+-------------------------+--------------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; cpu65xx:cpu|soReg                     ; Lost fanout                            ;
+; cpu65xx:cpu|nmiEdge                   ; Lost fanout                            ;
+; cpu65xx:cpu|irqReg                    ; Stuck at VCC due to stuck port data_in ;
+; cpu65xx:cpu|nmiReg                    ; Stuck at VCC due to stuck port data_in ;
+; cpu65xx:cpu|processIrq                ; Stuck at GND due to stuck port data_in ;
+; cpu65xx:cpu|irqActive                 ; Stuck at GND due to stuck port data_in ;
+; cpu65xx:cpu|opcInfo[8]                ; Merged with cpu65xx:cpu|opcInfo[4]     ;
+; Total Number of Removed Registers = 7 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                    ;
++--------------------+---------------------------+-----------------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register        ;
++--------------------+---------------------------+-----------------------------------------------+
+; cpu65xx:cpu|irqReg ; Stuck at VCC              ; cpu65xx:cpu|processIrq, cpu65xx:cpu|irqActive ;
+;                    ; due to stuck port data_in ;                                               ;
++--------------------+---------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 242   ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 192   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                               ;
++---------------------------------------------------------+-----------------------------------------------------------+------+
+; Register Name                                           ; Megafunction                                              ; Type ;
++---------------------------------------------------------+-----------------------------------------------------------+------+
+; apple2_rom:main_rom|q[0..7]                             ; apple2_rom:main_rom|rom_rtl_0                             ; RAM  ;
+; single_port_ram:ram|addr_reg[0..15]                     ; single_port_ram:ram|ram_rtl_0                             ; RAM  ;
+; video_generator:vid_gen|character_rom:char_rom0|q[0..4] ; video_generator:vid_gen|character_rom:char_rom0|rom_rtl_0 ; RAM  ;
++---------------------------------------------------------+-----------------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |apple_2e|video_generator:vid_gen|shift_reg_ls194:b9|q[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |apple_2e|video_generator:vid_gen|shift_reg_ls194:b9|q[2] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |apple_2e|cpu65xx:cpu|S[3]                                ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |apple_2e|clock_generator:c_g0|V[2]                       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |apple_2e|clock_generator:c_g0|H[0]                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |apple_2e|cpu65xx:cpu|T[3]                                ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |apple_2e|cpu65xx:cpu|PC[12]                              ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |apple_2e|cpu65xx:cpu|doReg[1]                            ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; Yes        ; |apple_2e|cpu65xx:cpu|myAddr[9]                           ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 30 LEs               ; 6 LEs                  ; Yes        ; |apple_2e|cpu65xx:cpu|myAddr[0]                           ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; Yes        ; |apple_2e|cpu65xx:cpu|myAddr[1]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Add20                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|\processAluInput:temp[5]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Mux19                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Mux24                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |apple_2e|ram_addr[13]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |apple_2e|ram_addr[10]                                    ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|theCpuCycle                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |apple_2e|gameport_select                                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Add3                                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |apple_2e|cpu65xx:cpu|Mux17                               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |apple_2e|device_select                                   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |apple_2e|cpu_data_in[2]                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Add3                                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Mux3                                ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Mux5                                ;
+; 1:1                ; 3 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Add15                               ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Mux30                               ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; No         ; |apple_2e|io_select                                       ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |apple_2e|cpu65xx:cpu|Mux28                               ;
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |apple_2e|cpu65xx:cpu|Add0                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Source assignments for apple2_rom:main_rom|altsyncram:rom_rtl_0|altsyncram_hg71:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------+
+; Assignment                      ; Value              ; From ; To                               ;
++---------------------------------+--------------------+------+----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                ;
++---------------------------------+--------------------+------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Source assignments for single_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_qi41:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------+
+; Assignment                      ; Value              ; From ; To                               ;
++---------------------------------+--------------------+------+----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                ;
++---------------------------------+--------------------+------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0|altsyncram_0k71:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|character_rom:char_rom0 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                      ;
+; ADDR_WIDTH     ; 9     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b5 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; NUM_BITS       ; 1     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b8_1 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; NUM_BITS       ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|flip_flop:b8_2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; NUM_BITS       ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:a10 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; DATA_WIDTH     ; 4     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:b4 ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; DATA_WIDTH     ; 4     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_generator:vid_gen|shift_reg_ls194:b9 ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; DATA_WIDTH     ; 4     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu65xx:cpu ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; pipelineopcode ; 0     ; Unsigned Binary                 ;
+; pipelinealumux ; 0     ; Unsigned Binary                 ;
+; pipelinealuout ; 0     ; Unsigned Binary                 ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: single_port_ram:ram ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                          ;
+; ADDR_WIDTH     ; 16    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: apple2_rom:main_rom ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                          ;
+; ADDR_WIDTH     ; 14    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apple2_rom:main_rom|altsyncram:rom_rtl_0          ;
++------------------------------------+----------------------------------------------+----------------+
+; Parameter Name                     ; Value                                        ; Type           ;
++------------------------------------+----------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                            ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                           ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                          ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                           ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                          ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                            ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                          ; Untyped        ;
+; WIDTH_A                            ; 8                                            ; Untyped        ;
+; WIDTHAD_A                          ; 14                                           ; Untyped        ;
+; NUMWORDS_A                         ; 16384                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                 ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                         ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WIDTH_B                            ; 1                                            ; Untyped        ;
+; WIDTHAD_B                          ; 1                                            ; Untyped        ;
+; NUMWORDS_B                         ; 1                                            ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                       ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                       ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                       ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                 ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                            ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                            ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                         ; Untyped        ;
+; BYTE_SIZE                          ; 8                                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; INIT_FILE                          ; db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                       ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                            ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                        ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                        ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                            ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_hg71                              ; Untyped        ;
++------------------------------------+----------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: single_port_ram:ram|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-------------------------------+
+; Parameter Name                     ; Value                ; Type                          ;
++------------------------------------+----------------------+-------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                       ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                       ;
+; WIDTH_A                            ; 8                    ; Untyped                       ;
+; WIDTHAD_A                          ; 16                   ; Untyped                       ;
+; NUMWORDS_A                         ; 65536                ; Untyped                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WIDTH_B                            ; 1                    ; Untyped                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                       ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                       ;
+; CBXI_PARAMETER                     ; altsyncram_qi41      ; Untyped                       ;
++------------------------------------+----------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0 ;
++------------------------------------+-------------------------------------------------+--------------------------------+
+; Parameter Name                     ; Value                                           ; Type                           ;
++------------------------------------+-------------------------------------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped                        ;
+; OPERATION_MODE                     ; ROM                                             ; Untyped                        ;
+; WIDTH_A                            ; 5                                               ; Untyped                        ;
+; WIDTHAD_A                          ; 9                                               ; Untyped                        ;
+; NUMWORDS_A                         ; 512                                             ; Untyped                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                        ;
+; WIDTH_B                            ; 1                                               ; Untyped                        ;
+; WIDTHAD_B                          ; 1                                               ; Untyped                        ;
+; NUMWORDS_B                         ; 1                                               ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK1                                          ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                        ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                        ;
+; BYTE_SIZE                          ; 8                                               ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                        ;
+; INIT_FILE                          ; db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                    ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_0k71                                 ; Untyped                        ;
++------------------------------------+-------------------------------------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                 ;
++-------------------------------------------+----------------------------------------------------------------------+
+; Name                                      ; Value                                                                ;
++-------------------------------------------+----------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                    ;
+; Entity Instance                           ; apple2_rom:main_rom|altsyncram:rom_rtl_0                             ;
+;     -- OPERATION_MODE                     ; ROM                                                                  ;
+;     -- WIDTH_A                            ; 8                                                                    ;
+;     -- NUMWORDS_A                         ; 16384                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 1                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
+; Entity Instance                           ; single_port_ram:ram|altsyncram:ram_rtl_0                             ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                          ;
+;     -- WIDTH_A                            ; 8                                                                    ;
+;     -- NUMWORDS_A                         ; 65536                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 1                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
+; Entity Instance                           ; video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                                                  ;
+;     -- WIDTH_A                            ; 5                                                                    ;
+;     -- NUMWORDS_A                         ; 512                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 1                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
++-------------------------------------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu65xx:cpu"                                                                                                                                   ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                      ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; nmi_n  ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; irq_n  ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; so_n   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; debuga ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; debugx ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; debugy ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; debugs ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:b9"                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; clear ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SRSI  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q[3]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:b4"                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; clear ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SRSI  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q[3]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|shift_reg_ls194:a10" ;
++-------+-------+----------+----------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                      ;
++-------+-------+----------+----------------------------------------------+
+; clear ; Input ; Info     ; Stuck at VCC                                 ;
+; SRSI  ; Input ; Info     ; Stuck at GND                                 ;
+; SLSI  ; Input ; Info     ; Explicitly unconnected                       ;
++-------+-------+----------+----------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b8_2" ;
++----------+--------+----------+-------------------------------------+
+; Port     ; Type   ; Severity ; Details                             ;
++----------+--------+----------+-------------------------------------+
+; preset_n ; Input  ; Info     ; Stuck at VCC                        ;
+; q_n      ; Output ; Info     ; Explicitly unconnected              ;
++----------+--------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b8_1" ;
++----------+--------+----------+-------------------------------------+
+; Port     ; Type   ; Severity ; Details                             ;
++----------+--------+----------+-------------------------------------+
+; preset_n ; Input  ; Info     ; Stuck at VCC                        ;
+; q_n      ; Output ; Info     ; Explicitly unconnected              ;
++----------+--------+----------+-------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "video_generator:vid_gen|flip_flop:b5" ;
++----------+--------+----------+-----------------------------------+
+; Port     ; Type   ; Severity ; Details                           ;
++----------+--------+----------+-----------------------------------+
+; preset_n ; Input  ; Info     ; Stuck at VCC                      ;
+; q_n      ; Output ; Info     ; Explicitly unconnected            ;
++----------+--------+----------+-----------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 92                          ;
+; cycloneiii_ff         ; 242                         ;
+;     ENA               ; 166                         ;
+;     ENA SCLR          ; 18                          ;
+;     ENA SLD           ; 8                           ;
+;     SCLR              ; 2                           ;
+;     SLD               ; 2                           ;
+;     plain             ; 46                          ;
+; cycloneiii_lcell_comb ; 946                         ;
+;     arith             ; 109                         ;
+;         2 data inputs ; 68                          ;
+;         3 data inputs ; 41                          ;
+;     normal            ; 837                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 73                          ;
+;         3 data inputs ; 195                         ;
+;         4 data inputs ; 555                         ;
+; cycloneiii_ram_block  ; 85                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.80                       ;
+; Average LUT depth     ; 6.78                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Fri May 03 23:19:03 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off apple_2e -c apple_2e
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/pls.v
+    Info (12023): Found entity 1: pls File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/pls.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_irq_mapper.sv
+    Info (12023): Found entity 1: pls_irq_mapper File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_irq_mapper.sv Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0.v
+    Info (12023): Found entity 1: pls_mm_interconnect_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_avalon_st_adapter.v
+    Info (12023): Found entity 1: pls_mm_interconnect_0_avalon_st_adapter File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_avalon_st_adapter.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_avalon_st_adapter_error_adapter_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_handshake_clock_crosser File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_avalon_st_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_clock_crosser File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_avalon_st_clock_crosser.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_avalon_st_pipeline_base.v
+    Info (12023): Found entity 1: altera_avalon_st_pipeline_base File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_avalon_st_pipeline_base.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_std_synchronizer_nocut.v
+    Info (12023): Found entity 1: altera_std_synchronizer_nocut File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_std_synchronizer_nocut.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_rsp_mux_001.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_rsp_mux_001 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_rsp_mux_001.sv Line: 51
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_arbitrator.sv Line: 103
+    Info (12023): Found entity 2: altera_merlin_arb_adder File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_arbitrator.sv Line: 228
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_rsp_mux.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_rsp_mux File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_rsp_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_rsp_demux_001.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_rsp_demux_001 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_rsp_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_rsp_demux.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_rsp_demux File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_rsp_demux.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_cmd_mux_001.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_cmd_mux_001 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_cmd_mux_001.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_cmd_mux.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_cmd_mux File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_cmd_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_cmd_demux_001.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_cmd_demux_001 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_cmd_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_cmd_demux.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_cmd_demux File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_cmd_demux.sv Line: 43
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_router_003.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_router_003_default_decode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_003.sv Line: 45
+    Info (12023): Found entity 2: pls_mm_interconnect_0_router_003 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_003.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_router_002.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_router_002_default_decode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_002.sv Line: 45
+    Info (12023): Found entity 2: pls_mm_interconnect_0_router_002 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_002.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_router_001.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_router_001_default_decode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_001.sv Line: 45
+    Info (12023): Found entity 2: pls_mm_interconnect_0_router_001 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router_001.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/pls_mm_interconnect_0_router.sv
+    Info (12023): Found entity 1: pls_mm_interconnect_0_router_default_decode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router.sv Line: 45
+    Info (12023): Found entity 2: pls_mm_interconnect_0_router File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_mm_interconnect_0_router.sv Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_avalon_sc_fifo.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_slave_agent.sv Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_burst_uncompressor.sv Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_master_agent.sv Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_slave_translator.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/altera_merlin_master_translator.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_sysid_qsys_0.v
+    Info (12023): Found entity 1: pls_sysid_qsys_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sysid_qsys_0.v Line: 34
+Info (12021): Found 4 design units, including 4 entities, in source file pls/synthesis/submodules/pls_sdram_pll.v
+    Info (12023): Found entity 1: pls_sdram_pll_dffpipe_l2c File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram_pll.v Line: 37
+    Info (12023): Found entity 2: pls_sdram_pll_stdsync_sv6 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram_pll.v Line: 98
+    Info (12023): Found entity 3: pls_sdram_pll_altpll_lqa2 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram_pll.v Line: 130
+    Info (12023): Found entity 4: pls_sdram_pll File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram_pll.v Line: 217
+Info (12021): Found 2 design units, including 2 entities, in source file pls/synthesis/submodules/pls_sdram.v
+    Info (12023): Found entity 1: pls_sdram_input_efifo_module File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 21
+    Info (12023): Found entity 2: pls_sdram File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 159
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_otg_hpi_data.v
+    Info (12023): Found entity 1: pls_otg_hpi_data File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_otg_hpi_data.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_otg_hpi_cs.v
+    Info (12023): Found entity 1: pls_otg_hpi_cs File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_otg_hpi_cs.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_otg_hpi_address.v
+    Info (12023): Found entity 1: pls_otg_hpi_address File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_otg_hpi_address.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_onchip_memory2_0.v
+    Info (12023): Found entity 1: pls_onchip_memory2_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_onchip_memory2_0.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0.v Line: 9
+Info (12021): Found 21 design units, including 21 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0_cpu_register_bank_a_module File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 21
+    Info (12023): Found entity 2: pls_nios2_gen2_0_cpu_register_bank_b_module File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 87
+    Info (12023): Found entity 3: pls_nios2_gen2_0_cpu_nios2_oci_debug File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 153
+    Info (12023): Found entity 4: pls_nios2_gen2_0_cpu_nios2_oci_break File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 295
+    Info (12023): Found entity 5: pls_nios2_gen2_0_cpu_nios2_oci_xbrk File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 588
+    Info (12023): Found entity 6: pls_nios2_gen2_0_cpu_nios2_oci_dbrk File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 795
+    Info (12023): Found entity 7: pls_nios2_gen2_0_cpu_nios2_oci_itrace File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 982
+    Info (12023): Found entity 8: pls_nios2_gen2_0_cpu_nios2_oci_td_mode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1115
+    Info (12023): Found entity 9: pls_nios2_gen2_0_cpu_nios2_oci_dtrace File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1183
+    Info (12023): Found entity 10: pls_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1265
+    Info (12023): Found entity 11: pls_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1337
+    Info (12023): Found entity 12: pls_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1380
+    Info (12023): Found entity 13: pls_nios2_gen2_0_cpu_nios2_oci_fifo File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1427
+    Info (12023): Found entity 14: pls_nios2_gen2_0_cpu_nios2_oci_pib File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1913
+    Info (12023): Found entity 15: pls_nios2_gen2_0_cpu_nios2_oci_im File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 1936
+    Info (12023): Found entity 16: pls_nios2_gen2_0_cpu_nios2_performance_monitors File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2006
+    Info (12023): Found entity 17: pls_nios2_gen2_0_cpu_nios2_avalon_reg File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2023
+    Info (12023): Found entity 18: pls_nios2_gen2_0_cpu_ociram_sp_ram_module File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2116
+    Info (12023): Found entity 19: pls_nios2_gen2_0_cpu_nios2_ocimem File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2181
+    Info (12023): Found entity 20: pls_nios2_gen2_0_cpu_nios2_oci File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2362
+    Info (12023): Found entity 21: pls_nios2_gen2_0_cpu File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu.v Line: 2834
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_sysclk.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0_cpu_debug_slave_sysclk File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_sysclk.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_tck.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0_cpu_debug_slave_tck File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_tck.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_wrapper.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0_cpu_debug_slave_wrapper File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu_debug_slave_wrapper.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_nios2_gen2_0_cpu_test_bench.v
+    Info (12023): Found entity 1: pls_nios2_gen2_0_cpu_test_bench File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_nios2_gen2_0_cpu_test_bench.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file pls/synthesis/submodules/pls_keycode.v
+    Info (12023): Found entity 1: pls_keycode File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_keycode.v Line: 21
+Info (12021): Found 5 design units, including 5 entities, in source file pls/synthesis/submodules/pls_jtag_uart_0.v
+    Info (12023): Found entity 1: pls_jtag_uart_0_sim_scfifo_w File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v Line: 21
+    Info (12023): Found entity 2: pls_jtag_uart_0_scfifo_w File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v Line: 78
+    Info (12023): Found entity 3: pls_jtag_uart_0_sim_scfifo_r File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v Line: 164
+    Info (12023): Found entity 4: pls_jtag_uart_0_scfifo_r File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v Line: 243
+    Info (12023): Found entity 5: pls_jtag_uart_0 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_jtag_uart_0.v Line: 331
+Info (12021): Found 0 design units, including 0 entities, in source file hpi_io_intf.sv
+Info (12021): Found 2 design units, including 1 entities, in source file clk28mpll.vhd
+    Info (12022): Found design unit 1: clk28mpll-SYN File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/CLK28MPLL.vhd Line: 52
+    Info (12023): Found entity 1: CLK28MPLL File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/CLK28MPLL.vhd Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file video_gen_and_clock_toplevel.sv
+    Info (12023): Found entity 1: video_gen_and_clock_toplevel File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_gen_and_clock_toplevel.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file video_generator_testbench.sv
+    Info (12023): Found entity 1: video_generator_testbench File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator_testbench.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg_ls194.sv
+    Info (12023): Found entity 1: shift_reg_ls194 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file flip_flop.sv
+    Info (12023): Found entity 1: flip_flop File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file color_decoder.sv
+Info (12021): Found 1 design units, including 1 entities, in source file apple2_rom.sv
+    Info (12023): Found entity 1: apple2_rom File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file clock14mhz_pll.v
+    Info (12023): Found entity 1: clock14Mhz_pll File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock14Mhz_pll.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file clock_generator.sv
+    Info (12023): Found entity 1: clock_generator File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file clock_testbench.sv
+Info (12021): Found 1 design units, including 1 entities, in source file apple_2e.sv
+    Info (12023): Found entity 1: apple_2e File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file cpu65xx.vhd
+    Info (12022): Found design unit 1: cpu65xx-fast File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd Line: 65
+    Info (12023): Found entity 1: cpu65xx File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file ram.sv
+    Info (12023): Found entity 1: ram File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/ram.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file video_generator.sv
+    Info (12023): Found entity 1: video_generator File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file single_port_ram.sv
+    Info (12023): Found entity 1: single_port_ram File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file apple_2e_testbench.sv
+    Info (12023): Found entity 1: apple_2e_testbench File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e_testbench.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
+    Info (12023): Found entity 1: HexDriver File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/HexDriver.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file apple2_toplevel.sv
+    Info (12023): Found entity 1: apple2_toplevel File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_toplevel.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file character_rom.sv
+    Info (12023): Found entity 1: character_rom File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-rtl File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/vga_controller.vhd Line: 77
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/vga_controller.vhd Line: 55
+Info (12021): Found 1 design units, including 1 entities, in source file keyboard.sv
+    Info (12023): Found entity 1: keyboard File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/keyboard.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file 15hz_divider.sv
+    Info (12023): Found entity 1: divider_15Hz File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/15hz_divider.sv Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file spi_controller.vhd
+    Info (12022): Found design unit 1: spi_controller-rtl File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/spi_controller.vhd Line: 43
+    Info (12023): Found entity 1: spi_controller File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/spi_controller.vhd Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file disk.sv
+    Info (12023): Found entity 1: disk_ii File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/disk.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dual_port_ram.sv
+    Info (12023): Found entity 1: dual_port_ram File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/dual_port_ram.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file disk_rom.sv
+    Info (12023): Found entity 1: disk_rom File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/disk_rom.sv Line: 4
+Warning (10037): Verilog HDL or VHDL warning at pls_sdram.v(318): conditional expression evaluates to a constant File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 318
+Warning (10037): Verilog HDL or VHDL warning at pls_sdram.v(328): conditional expression evaluates to a constant File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 328
+Warning (10037): Verilog HDL or VHDL warning at pls_sdram.v(338): conditional expression evaluates to a constant File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 338
+Warning (10037): Verilog HDL or VHDL warning at pls_sdram.v(682): conditional expression evaluates to a constant File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/pls/synthesis/submodules/pls_sdram.v Line: 682
+Info (12127): Elaborating entity "apple_2e" for the top level hierarchy
+Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:c_g0" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 68
+Info (12128): Elaborating entity "video_generator" for hierarchy "video_generator:vid_gen" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 101
+Warning (10036): Verilog HDL or VHDL warning at video_generator.sv(11): object "SYNC" assigned a value but never read File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 11
+Warning (10036): Verilog HDL or VHDL warning at video_generator.sv(12): object "color_burst" assigned a value but never read File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 12
+Warning (10036): Verilog HDL or VHDL warning at video_generator.sv(17): object "q_a9_n" assigned a value but never read File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 17
+Warning (10036): Verilog HDL or VHDL warning at video_generator.sv(32): object "DATA_WIDTH" assigned a value but never read File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 32
+Warning (10036): Verilog HDL or VHDL warning at video_generator.sv(43): object "inv_clock_7Mhz" assigned a value but never read File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 43
+Info (12128): Elaborating entity "character_rom" for hierarchy "video_generator:vid_gen|character_rom:char_rom0" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 55
+Warning (10030): Net "rom.data_a" at character_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv Line: 13
+Warning (10030): Net "rom.waddr_a" at character_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv Line: 13
+Warning (10030): Net "rom.we_a" at character_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv Line: 13
+Info (12128): Elaborating entity "flip_flop" for hierarchy "video_generator:vid_gen|flip_flop:b5" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 105
+Info (12128): Elaborating entity "shift_reg_ls194" for hierarchy "video_generator:vid_gen|shift_reg_ls194:a10" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv Line: 162
+Info (12128): Elaborating entity "cpu65xx" for hierarchy "cpu65xx:cpu" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 121
+Info (12128): Elaborating entity "single_port_ram" for hierarchy "single_port_ram:ram" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 135
+Info (12128): Elaborating entity "apple2_rom" for hierarchy "apple2_rom:main_rom" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 141
+Warning (10850): Verilog HDL warning at apple2_rom.sv(25): number of words (12288) in memory file does not match the number of elements in the address range [0:16383] File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv Line: 25
+Warning (10030): Net "rom.data_a" at apple2_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv Line: 13
+Warning (10030): Net "rom.waddr_a" at apple2_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv Line: 13
+Warning (10030): Net "rom.we_a" at apple2_rom.sv(13) has no driver or initial value, using a default initial value '0' File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv Line: 13
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "apple2_rom:main_rom|rom_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 14
+        Info (286033): Parameter NUMWORDS_A set to 16384
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "single_port_ram:ram|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 16
+        Info (286033): Parameter NUMWORDS_A set to 65536
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "video_generator:vid_gen|character_rom:char_rom0|rom_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 5
+        Info (286033): Parameter WIDTHAD_A set to 9
+        Info (286033): Parameter NUMWORDS_A set to 512
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif
+Info (12130): Elaborated megafunction instantiation "apple2_rom:main_rom|altsyncram:rom_rtl_0"
+Info (12133): Instantiated megafunction "apple2_rom:main_rom|altsyncram:rom_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "14"
+    Info (12134): Parameter "NUMWORDS_A" = "16384"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/apple_2e.ram0_apple2_rom_6ecdab2e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hg71.tdf
+    Info (12023): Found entity 1: altsyncram_hg71 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_hg71.tdf Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c8a.tdf
+    Info (12023): Found entity 1: decode_c8a File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_c8a.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3nb.tdf
+    Info (12023): Found entity 1: mux_3nb File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/mux_3nb.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "single_port_ram:ram|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "single_port_ram:ram|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "16"
+    Info (12134): Parameter "NUMWORDS_A" = "65536"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qi41.tdf
+    Info (12023): Found entity 1: altsyncram_qi41 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_qi41.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
+    Info (12023): Found entity 1: decode_rsa File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_rsa.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_k8a.tdf
+    Info (12023): Found entity 1: decode_k8a File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/decode_k8a.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_bnb.tdf
+    Info (12023): Found entity 1: mux_bnb File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/mux_bnb.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0"
+Info (12133): Instantiated megafunction "video_generator:vid_gen|character_rom:char_rom0|altsyncram:rom_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "5"
+    Info (12134): Parameter "WIDTHAD_A" = "9"
+    Info (12134): Parameter "NUMWORDS_A" = "512"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/apple_2e.ram0_character_rom_364cdc5c.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0k71.tdf
+    Info (12023): Found entity 1: altsyncram_0k71 File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/db/altsyncram_0k71.tdf Line: 27
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "io_select[0]" is stuck at GND File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_st_handshake_clock_crosser" -- entity does not exist in design
+Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls" -- entity does not exist in design
+Warning (20013): Ignored 14 assignments for entity "pls_irq_mapper" -- entity does not exist in design
+Warning (20013): Ignored 24 assignments for entity "pls_jtag_uart_0" -- entity does not exist in design
+Warning (20013): Ignored 22 assignments for entity "pls_keycode" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "pls_mm_interconnect_0" -- entity does not exist in design
+Warning (20013): Ignored 32 assignments for entity "pls_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "pls_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "pls_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls_mm_interconnect_0_cmd_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "pls_mm_interconnect_0_router" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "pls_mm_interconnect_0_router_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "pls_mm_interconnect_0_router_002" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "pls_mm_interconnect_0_router_003" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "pls_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "pls_mm_interconnect_0_rsp_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "pls_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 149 assignments for entity "pls_nios2_gen2_0" -- entity does not exist in design
+Warning (20013): Ignored 179 assignments for entity "pls_nios2_gen2_0_cpu" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "pls_onchip_memory2_0" -- entity does not exist in design
+Warning (20013): Ignored 22 assignments for entity "pls_otg_hpi_address" -- entity does not exist in design
+Warning (20013): Ignored 22 assignments for entity "pls_otg_hpi_cs" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "pls_otg_hpi_data" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "pls_sdram" -- entity does not exist in design
+Warning (20013): Ignored 78 assignments for entity "pls_sdram_pll" -- entity does not exist in design
+Warning (20013): Ignored 10 assignments for entity "pls_sysid_qsys_0" -- entity does not exist in design
+Info (144001): Generated suppressed messages file C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/output_files/apple_2e.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Clock_50Mhz" File: C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv Line: 3
+Info (21057): Implemented 1178 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 73 output pins
+    Info (21061): Implemented 1001 logic cells
+    Info (21064): Implemented 85 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Fri May 03 23:19:21 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/output_files/apple_2e.map.smsg.
+
+

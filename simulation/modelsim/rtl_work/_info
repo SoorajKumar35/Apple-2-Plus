@@ -1,0 +1,280 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/simulation/modelsim
+vapple2_rom
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1556943764
+!i10b 1
+!s100 >Q?gjLe=f4k6Fk]b4PkcM0
+I14Zm[@FkFj^=mo@Y_T^Rl1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 apple2_rom_sv_unit
+S1
+R0
+w1556518497
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv
+L0 4
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1556943764.000000
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple2_rom.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project
+Z8 tCvgOpt 0
+vapple_2e
+R1
+R2
+!i10b 1
+!s100 RnRjMJZl`V`F@^33=cM?Q2
+I<KM6OX@iljAoHaAPzkEd33
+R3
+!s105 apple_2e_sv_unit
+S1
+R0
+w1556881934
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e.sv|
+!i113 1
+R6
+R7
+R8
+vapple_2e_testbench
+R1
+Z9 !s110 1556943765
+!i10b 1
+!s100 6zA3=e`E]eCmibXdU^fng3
+IKzAo?Tj@:J[L8>AIaZSG50
+R3
+!s105 apple_2e_testbench_sv_unit
+S1
+R0
+w1556943541
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e_testbench.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e_testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1556943765.000000
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e_testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/apple_2e_testbench.sv|
+!i113 1
+R6
+R7
+R8
+vcharacter_rom
+R1
+R9
+!i10b 1
+!s100 l=``G3VEB]PoCQ63SJihf0
+Ib6_Vi_djE<b1`1MUKK7?h3
+R3
+!s105 character_rom_sv_unit
+S1
+R0
+w1555894538
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/character_rom.sv|
+!i113 1
+R6
+R7
+R8
+vclock_generator
+R1
+R2
+!i10b 1
+!s100 jTjDhMhUBZl9FM9c6Kk<i1
+IIhzmWzNA0NH:6Wc8a`1A52
+R3
+!s105 clock_generator_sv_unit
+S1
+R0
+w1556880849
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/clock_generator.sv|
+!i113 1
+R6
+R7
+R8
+Ecpu65xx
+Z11 w1555374820
+Z12 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z13 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z15 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z16 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z17 8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd
+Z18 FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd
+l0
+L21
+VZX<fikEzH;2nzPXQKnGPk3
+!s100 ^UYAICR1aYomilkGRV^]k2
+Z19 OV;C;10.5b;63
+31
+R9
+!i10b 1
+R10
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd|
+Z21 !s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/cpu65xx.vhd|
+!i113 1
+Z22 o-93 -work work
+Z23 tExplicit 1 CvgOpt 0
+Afast
+R12
+R13
+R14
+R15
+R16
+DEx4 work 7 cpu65xx 0 22 ZX<fikEzH;2nzPXQKnGPk3
+l670
+L65
+VKh:a];nN7TIW:]mjU^nQl1
+!s100 ;R6^iHO;S`Wm@DFL?>QBh0
+R19
+31
+R9
+!i10b 1
+R10
+R20
+R21
+!i113 1
+R22
+R23
+vflip_flop
+R1
+R2
+!i10b 1
+!s100 hbfP_V5W]clGe00E99<eT0
+IQ<R[lYLFn^G3_:J>@II5B2
+R3
+!s105 flip_flop_sv_unit
+S1
+R0
+Z24 w1556332154
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/flip_flop.sv|
+!i113 1
+R6
+R7
+R8
+vshift_reg_ls194
+R1
+R2
+!i10b 1
+!s100 =LKbgJa@1eYbab0EA88E?2
+IQHDP=2_z`2dM53Wbz7n0i3
+R3
+!s105 shift_reg_ls194_sv_unit
+S1
+R0
+R24
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/shift_reg_ls194.sv|
+!i113 1
+R6
+R7
+R8
+vsingle_port_ram
+R1
+R9
+!i10b 1
+!s100 BiV_k<Q[CmjanQEDKn8ke1
+IDkfFUf[CcVbWNZT:0b>hg3
+R3
+!s105 single_port_ram_sv_unit
+S1
+R0
+w1555873198
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/single_port_ram.sv|
+!i113 1
+R6
+R7
+R8
+vvideo_generator
+R1
+R2
+!i10b 1
+!s100 =H5NlR22<T0JT7cYg<TR20
+Ij=0QZ=h<b0c^845G9En0<0
+R3
+!s105 video_generator_sv_unit
+S1
+R0
+w1556877144
+8C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv
+FC:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project|C:/Users/Admin/Desktop/Spring_2019/ECE_385/ece-385-labs/final_project/video_generator.sv|
+!i113 1
+R6
+R7
+R8

@@ -1,0 +1,15 @@
+module clock_testbench();
+
+timeunit 10ns;
+timeprecision 1ns;
+
+logic CLOCK_50,
+		RESET;
+
+always begin
+	#1 CLOCK_50 = ~CLOCK_50;
+end
+
+initial begin
+	CLOCK_50 = 0;
+end

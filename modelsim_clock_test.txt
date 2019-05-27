@@ -1,0 +1,20 @@
+do apple_2e_run_msim_rtl_verilog.do
+add wave -position insertpoint  \
+sim:/clock_testbench/c_g0/clock_14Mhz \
+sim:/clock_testbench/c_g0/clock_7Mhz \
+sim:/clock_testbench/c_g0/clock_3Mhz \
+sim:/clock_testbench/c_g0/clock_1Mhz
+add wave -position insertpoint  \
+sim:/clock_testbench/c_g0/ldps_n \
+sim:/clock_testbench/c_g0/color_delay_N \
+sim:/clock_testbench/c_g0/phase0 \
+sim:/clock_testbench/c_g0/phase1 \
+sim:/clock_testbench/c_g0/color_ref \
+sim:/clock_testbench/c_g0/color_ref_n \
+sim:/clock_testbench/c_g0/rasn_q0 \
+sim:/clock_testbench/c_g0/ax_q1 \
+sim:/clock_testbench/c_g0/casn_q2 \
+sim:/clock_testbench/c_g0/q3
+restart -f
+log -r *
+run 1000ns

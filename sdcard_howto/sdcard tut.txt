@@ -1,0 +1,16 @@
+1. Convert .dsk to .nib 
+$ disk2nib.exe <file.dsk> <file.nib>
+
+2. Push nib file to sd card using win32diskimager (https://sourceforge.net/projects/win32diskimager/)
+
+3. Plug sd card in
+
+
+After starting the apple 2 we start in the system monitor prompt. To get into BASIC prompt press
+Ctrl+B and then enter.
+ You know you get into BASIC prompt when the * turns into a ]
+
+then input 
+the "PR#6" command which prints from peripheral slot 6 (our disk emu) and should load the game.
+
+LEDG flashing means its loading it can take a while. Make sure the switches are all set to 0 beforehand.

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri May 03 23:19:21 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : apple_2e
+Top-level Entity Name : apple_2e
+Family : Cyclone IV E
+Total logic elements : 962
+    Total combinational functions : 944
+    Dedicated logic registers : 242
+Total registers : 242
+Total pins : 92
+Total virtual pins : 0
+Total memory bits : 657,920
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

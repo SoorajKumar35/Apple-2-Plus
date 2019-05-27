@@ -1,0 +1,10 @@
+module video_generator(
+	input logic CLK_14
+);
+
+always_ff @(posedge CLK_14)
+begin
+	
+end
+
+endmodule

@@ -1,0 +1,369 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PC_DEBUG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_DEBUG[15]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_addr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE_DEBUG[7]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[2]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[3]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[4]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[5]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[6]",
+					"strict" : false
+				},
+				{
+					"name" : "io_select[7]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[2]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[3]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[4]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[5]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[6]",
+					"strict" : false
+				},
+				{
+					"name" : "device_select[7]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_data_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "color_line",
+					"strict" : false
+				},
+				{
+					"name" : "HBL",
+					"strict" : false
+				},
+				{
+					"name" : "VBL",
+					"strict" : false
+				},
+				{
+					"name" : "video_data",
+					"strict" : false
+				},
+				{
+					"name" : "ld194",
+					"strict" : false
+				},
+				{
+					"name" : "read_key",
+					"strict" : false
+				},
+				{
+					"name" : "q3",
+					"strict" : false
+				},
+				{
+					"name" : "pre_phase0",
+					"strict" : false
+				},
+				{
+					"name" : "FLASH_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[0]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[1]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[2]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[3]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[4]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[5]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[6]",
+					"strict" : false
+				},
+				{
+					"name" : "peripheral_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data_l[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Clock_14Mhz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

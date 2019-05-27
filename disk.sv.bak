@@ -1,0 +1,24 @@
+module disk_ii (
+	input logic Clock_14MHz,
+					Clock_2MHz,
+					pre_phase0,
+					IO_SELECT,
+					DEVICE_SELECT,
+					RESET,
+	input logic [13:0] ram_write_addr,
+	input logic [7:0] ram_di,
+	input logic ram_we,
+	input logic [15:0] addr,
+	input logic [7:0] disk_ii_data_in,
+	output logic [7:0] disk_ii_data_out,
+	output logic [5:0] track,
+	output logic [13:0] track_addr,
+	output logic	disk1_on,
+						disk2_on
+);
+
+	//control signals
+	logic [3:0] motor_phase;
+	logic disk_on, disk2_select, q6, q7;
+
+endmodule

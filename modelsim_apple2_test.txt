@@ -1,0 +1,13 @@
+add wave -position insertpoint  \
+sim:/apple_2e_testbench/apple/RAM_SELECT \
+sim:/apple_2e_testbench/apple/KBD_SELECT \
+sim:/apple_2e_testbench/apple/ROM_SELECT \
+sim:/apple_2e_testbench/apple/SOFTSWITCH_SELECT \
+sim:/apple_2e_testbench/apple/SPEAKER_SELECT \
+sim:/apple_2e_testbench/apple/GAMEPORT_SELECT \
+sim:/apple_2e_testbench/apple/cpu_addr \
+sim:/apple_2e_testbench/apple/cpu_data_in \
+sim:/apple_2e_testbench/apple/cpu_data_out \
+sim:/apple_2e_testbench/apple/cpu_we
+restart -f
+run 100000ns

@@ -1,0 +1,4 @@
+module ascii_gen(
+	input logic [7:0] keycode,
+	output logic [7:0] ascii
+	);

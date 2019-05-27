@@ -1,0 +1,22 @@
+module ram (address, data, CS, WE, OE);
+
+parameter address_size = ;
+parameter word_size = 1;
+
+input [15:0] Address;
+inout [7:0] data;
+input CS, WE, OE;
+
+reg [WordSize-1:0] Mem [0:(1<<AddressSize)-1];
+
+assign Data = (!CS && !OE) ? Mem[Address] : {8{1'bz}};
+
+always @(CS or WE)
+  if (!CS && !WE)
+    Mem[Address] = Data;
+
+always @(WE or OE)
+  if (!WE && !OE)
+    $display("Operational error in RamChip: OE and WE both active");
+
+endmodule
